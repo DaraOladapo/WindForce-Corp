@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WindForceCorp.Views.EmployeeAuthPage" Title="Employee Auth">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="Center" Margin="0,32,0,0">
+                <Image Source="AppLogo.png" HeightRequest="56" HorizontalOptions="Center"/>
+                <Label Text="WindForce Corp" HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Grid BackgroundColor="#FF800000"  HeightRequest="2"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

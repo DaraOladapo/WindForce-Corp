@@ -4,10 +4,63 @@
              xmlns:local="clr-namespace:WindForceCorp"
              x:Class="WindForceCorp.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="Center" Margin="0,32,0,0">
+                <Image Source="AppLogo.png" HeightRequest="56" HorizontalOptions="Center"/>
+                <Label Text="WindForce Corp" HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                 <Grid BackgroundColor="#FF800000"  HeightRequest="2"/>
+                <Label HorizontalOptions="Center" Text="Employee Data"/>
+            </StackLayout>
+           
+            
+        <Grid VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EmployeeList_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="List.png" HeightRequest="48" HorizontalOptions="Center"/>
+                        <Label Text="Employee List" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Grid.Column="1">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EmployeeGrid_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="Grid.png" HeightRequest="48" HorizontalOptions="Center"/>
+                        <Label Text="Employee Grid" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Grid.Row="1">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EmployeeRoles_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="Role.png" HeightRequest="48" HorizontalOptions="Center"/>
+                        <Label Text="Employee Roles" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Grid.Row="1" Grid.Column="1">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="EmployeeAuth_Tapped"/>
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="Auth.png" HeightRequest="48" HorizontalOptions="Center"/>
+                        <Label Text="Employee Auth" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+        
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

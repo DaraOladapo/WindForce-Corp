@@ -13,7 +13,7 @@ namespace WindForceCorp
         {
             InitializeComponent();
 
-            MainPage = new WindForceCorp.MainPage();
+            MainPage = new NavigationPage(new WindForceCorp.MainPage());
         }
 
         protected override void OnStart()
