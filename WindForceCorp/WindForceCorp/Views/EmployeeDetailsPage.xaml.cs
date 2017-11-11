@@ -18,7 +18,7 @@ namespace WindForceCorp.Views
             AvatarURLBox.Source = employee.avatarUrl;
             FullNameBox.Text = employee.fullName;
             AddressBox.Text = employee.address;
-            EmploymentDateBox.Text = $"{employee.employmentDate.Year.ToString()}/{employee.employmentDate.Month.ToString()}/{employee.employmentDate.Day.ToString()}";
+            EmploymentDateBox.Text = $"{employee.employmentDate.Day.ToString()}-{employee.employmentDate.Month.ToString()}-{employee.employmentDate.Year.ToString()}";
             SalaryBox.Text = employee.salary.ToString();
         }
     }
