@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WindForceCorp.Views.EmployeeDetailsPage" Title="Employee Details Page">
+             x:Class="WindForceCorp.Views.EmployeeDetailsPage">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +16,18 @@
             <StackLayout Grid.Row="1">
                 <Grid BackgroundColor="#FF800000"  HeightRequest="2"/>
             </StackLayout>
+            <StackLayout Grid.Row="2" >
+                <Image x:Name="AvatarURLBox" Margin="4"/>
+                <Label Text="FullName" Margin="4"/>
+                <Label x:Name="FullNameBox" Margin="4" TextColor="#FF800000"/>
+                <Label Text="Address" Margin="4"/>
+                <Label x:Name="AddressBox" Margin="4" TextColor="#FF800000"/>
+                <Label Text="Employment Date" Margin="4"/>
+                <Label x:Name="EmploymentDateBox" Margin="4" TextColor="#FF800000"/>
+                <Label Text="Salary" Margin="4"/>
+                <Label x:Name="SalaryBox" Margin="4" TextColor="#FF800000"/>
 
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

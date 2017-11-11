@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WindForceCorp.Views.EmployeeListPage" Title="Employee List">
+             x:Class="WindForceCorp.Views.EmployeeListPage">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -16,7 +16,24 @@
             <StackLayout Grid.Row="1">
                 <Grid BackgroundColor="#FF800000"  HeightRequest="2"/>
             </StackLayout>
-
+            <ListView x:Name="EmployeeList" Grid.Row="2" ItemTapped="EmployeeList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding avatarUrl}" HeightRequest="48"/>
+                                    <Label Text="{Binding fullName}"
+                                TextColor="#f35e20" />
+                                    <Label Text="{Binding salary}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#FF800000" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

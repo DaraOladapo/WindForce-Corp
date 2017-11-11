@@ -12,9 +12,14 @@ namespace WindForceCorp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EmployeeDetailsPage : ContentPage
     {
-        public EmployeeDetailsPage()
+        public EmployeeDetailsPage(Models.Employee employee)
         {
             InitializeComponent();
+            AvatarURLBox.Source = employee.avatarUrl;
+            FullNameBox.Text = employee.fullName;
+            AddressBox.Text = employee.address;
+            EmploymentDateBox.Text = $"{employee.employmentDate.Year.ToString()}/{employee.employmentDate.Month.ToString()}/{employee.employmentDate.Day.ToString()}";
+            SalaryBox.Text = employee.salary.ToString();
         }
     }
 }
