@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:WindForceCorp"
@@ -35,15 +35,16 @@
                             <TapGestureRecognizer Tapped="EmployeeList_Tapped"/>
                         </StackLayout.GestureRecognizers>
                         <Image Source="List.png" HeightRequest="48" HorizontalOptions="Center"/>
-                        <Label Text="Employee List" HorizontalOptions="Center"/>
+                        <Label Text="Employees List" HorizontalOptions="Center"/>
                     </StackLayout>
                     <StackLayout HorizontalOptions="Center" Grid.Column="1">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="EmployeeGrid_Tapped"/>
                         </StackLayout.GestureRecognizers>
                         <Image Source="Grid.png" HeightRequest="48" HorizontalOptions="Center"/>
-                        <Label Text="Employee Grid" HorizontalOptions="Center"/>
+                        <Label Text="Employees Collection" HorizontalOptions="Center"/>
                     </StackLayout>
+                <!--
                     <StackLayout HorizontalOptions="Center" Grid.Row="1">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="EmployeeRoles_Tapped"/>
@@ -57,7 +58,7 @@
                         </StackLayout.GestureRecognizers>
                         <Image Source="Auth.png" HeightRequest="48" HorizontalOptions="Center"/>
                         <Label Text="Employee Auth" HorizontalOptions="Center"/>
-                    </StackLayout>
+                    </StackLayout>-->
                 </Grid>
         
         </Grid>

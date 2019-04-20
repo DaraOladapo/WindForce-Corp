@@ -1,22 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WindForceCorp.Views.EmployeeGridViewPage">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WindForceCorp.Views.EmployeeGridViewPage">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <StackLayout HorizontalOptions="Center" Margin="0,32,0,0">
-                <Image Source="AppLogo.png" HeightRequest="56" HorizontalOptions="Center"/>
-                <Label Text="WindForce Corp" HorizontalOptions="Center"/>
+                <Image Source="AppLogo.png" HeightRequest="56" HorizontalOptions="Center" />
+                <Label Text="WindForce Corp" HorizontalOptions="Center" />
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <Grid BackgroundColor="#FF800000"  HeightRequest="2"/>
+                <Grid BackgroundColor="#FF800000" HeightRequest="2" />
             </StackLayout>
-               
+            <CollectionView x:Name="EmployeeCollection" Grid.Row="2">
+            <!--    <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>-->
+                <!--<CollectionView.ItemTemplate>
+                    <DataTemplate>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding avatarUrl}" HeightRequest="48" />
+                                    <Label Text="{Binding fullName}" TextColor="#f35e20" />
+                                    <Label Text="{Binding salary}" HorizontalOptions="EndAndExpand" TextColor="#FF800000" />
+                                </StackLayout>
+                            </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>-->
+            </CollectionView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
