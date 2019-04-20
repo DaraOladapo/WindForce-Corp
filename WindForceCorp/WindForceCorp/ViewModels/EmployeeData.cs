@@ -11,15 +11,38 @@ using WindForceCorp.Models;
 
 namespace WindForceCorp.ViewModels
 {
-    public class EmployeeData
+    public static class EmployeeData
     {
-        public List<Employee> allEmployeeData = new List<Employee>();
-        public async Task<ObservableCollection<Employee>> GetAllEmployeeDataAsync()
+        
+        public static async Task<IEnumerable<Employee>> GetAllEmployeeDataAsync()
         {
-            return new ObservableCollection<Employee>
-            {
 
-            };
+            Employee employee = new Employee();
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    client.BaseAddress = new Uri("https://my.api.mockaroo.com/windforceemployees.json?key=9a55a0e0");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var response = await client.GetAsync(client.BaseAddress);
+
+                    response.EnsureSuccessStatusCode();
+
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ObservableCollection<Employee>>(stringResult);
+
+
+
+                }
+                catch (HttpRequestException httpRequestException)
+                {
+                    var error = $"Error getting employee data: {httpRequestException.Message}";
+                    return null;
+                }
+
+            }
         }
     }
 }

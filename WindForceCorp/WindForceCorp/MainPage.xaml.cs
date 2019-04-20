@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,42 +12,33 @@ namespace WindForceCorp
 {
     public partial class MainPage : ContentPage
     {
-        EmployeeData employeeData = new EmployeeData();
-        List<Employee> allEmployee=new List<Employee>();
+        public static List<Employee> allEmployeeData = new List<Employee>();
+
         public MainPage()
         {
             InitializeComponent();
-            GetEmployeeDataAsync();
-            
+            GetEmployeeData();
+
         }
 
-        private async void GetEmployeeDataAsync()
+        private async void GetEmployeeData()
         {
-            await employeeData.GetAllEmployeeDataAsync();
-            ParseEmployeeData();
-        }
-
-        private void ParseEmployeeData()
-        {
-            foreach (var employee in employeeData.allEmployeeData)
-            {
-                allEmployee.Add(new Employee() { firstName = employee.firstName, lastName = employee.lastName, fullName=employee.fullName, address=employee.address, employmentDate=employee.employmentDate, salary=employee.salary, avatarUrl=employee.avatarUrl});
-            }
+            allEmployeeData = (await EmployeeData.GetAllEmployeeDataAsync()).ToList();
         }
 
         private void EmployeeList_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Views.EmployeeListPage(allEmployee));
+            Navigation.PushAsync(new Views.EmployeeListPage(allEmployeeData));
         }
 
         private void EmployeeGrid_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Views.EmployeeGridViewPage(allEmployee));
+            Navigation.PushAsync(new Views.EmployeeGridViewPage(allEmployeeData));
         }
 
         private void EmployeeRoles_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Views.EmployeeRolesPage(allEmployee));
+            Navigation.PushAsync(new Views.EmployeeRolesPage(allEmployeeData));
         }
 
         private void EmployeeAuth_Tapped(object sender, EventArgs e)

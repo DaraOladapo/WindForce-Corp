@@ -11,12 +11,12 @@ namespace WindForceCorp.Models
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string address { get; set; }
-        public string fullName { get; set; }
+        public string fullName => $"{firstName} {lastName}";
         public DateTime employmentDate { get; set; }
         public float salary { get; set; }
         public string avatarUrl { get; set; }
     }
-   
+
 
 
 }
